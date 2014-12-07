@@ -17,6 +17,7 @@
 # By simply sourcing this library, you can use all available functions as 
 # documented on the projects page.
 #
+# https://github.com/deviantony/bsfl
 
 BSFL_VERSION="2.00-beta-4"
 
