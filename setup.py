@@ -28,8 +28,6 @@ setup(
     license=about["__license__"],
 
     classifiers=[
-        'Development Status :: 4 - Beta',
-
         'Intended Audience :: System Administrators',
         'Topic :: System :: Archiving :: Backup',
 
@@ -41,20 +39,17 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
 
-    keywords='mysql database backup percona xtrabackup',
+    keywords='mysql mariadb database backup percona xtrabackup',
 
     packages=find_packages(exclude=['contrib', 'docs', 'tests*', 'sql']),
 
-    install_requires=['docopt'],
-
-    # extras_require = {
-    #     'dev': ['check-manifest'],
-    #     'test': ['coverage'],
-    # },
+    install_requires=['docopt', 'requests'],
 
     entry_points={
         'console_scripts': [
-            'pyxtrabackup=xtrabackup.backup:main',
+            'pyxtrabackup=xtrabackup.full_backup:main',
+            'pyxtrabackup-inc=xtrabackup.incremental_backup:main',
+            'pyxtrabackup-restore=xtrabackup.restoration:main'
         ],
     },
 )
